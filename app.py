@@ -39,3 +39,10 @@ def mostrar_dispositivos_html():
     </html>
     """
     return render_template_string(html, dispositivos=dispositivos)
+
+    @app.route('/dispositivos', methods=['POST'])
+def agregar_dispositivo():
+    data = request.get_json()
+    dispositivos[data["id"]] = data
+    return jsonify(dispositivos)
+
