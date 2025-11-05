@@ -46,3 +46,9 @@ def agregar_dispositivo():
     dispositivos[data["id"]] = data
     return jsonify(dispositivos)
 
+@app.route('/dispositivos/<id>', methods=['PUT'])
+def modificar_dispositivo(id):
+    if id in dispositivos:
+        dispositivos[id].update(request.get_json())
+    return jsonify(dispositivos)
+
