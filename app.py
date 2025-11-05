@@ -52,3 +52,6 @@ def modificar_dispositivo(id):
         dispositivos[id].update(request.get_json())
     return jsonify(dispositivos)
 
+@app.route('/', methods=['GET'])
+def test():
+    return "API"
