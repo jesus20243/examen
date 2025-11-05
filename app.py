@@ -55,3 +55,6 @@ def modificar_dispositivo(id):
 @app.route('/', methods=['GET'])
 def test():
     return "API"
+
+if __name__ == '__main__':
+    app.run(debug=True) 
